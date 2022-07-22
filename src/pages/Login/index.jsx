@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { EnterButton, InputContainer, FooterContainer, LoginContainer, RadioContainer } from "./styles";
 
 export function Login () {
@@ -29,8 +30,8 @@ export function Login () {
                     ENTRAR
                 </EnterButton>
                 <FooterContainer>
-                    <a href="">Esqueci minha senha</a>
-                    <a>Nova conta</a>
+                    <Link to=''>Esqueci minha senha</Link>
+                    <Link to="/cadastro">Nova conta</Link>
                 </FooterContainer>
         </LoginContainer>
     )
