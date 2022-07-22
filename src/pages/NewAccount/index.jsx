@@ -1,4 +1,6 @@
-import { NewAccountContainer, InputContainer, RadioContainer } from "./styles"
+import { StyledButton } from "../../styles/styledbutton"
+import { NewAccountContainer } from "./styles";
+import { Link } from 'react-router-dom';
 
 export function NewAccount () {
     return (
@@ -6,19 +8,14 @@ export function NewAccount () {
             <h1>KAREN</h1>
             <h2>Boss School</h2>
 
-            <InputContainer>
-                <RadioContainer>
-                    <legend>Você é:</legend>
-                    <div>
-                        <input type="radio" name="logar como" id="aluno"/>
-                        <label for="aluno">Aluno</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="logar como" id="professor"/>
-                        <label for="professor">Professor</label>
-                    </div>
-                </RadioContainer>
-            </InputContainer>
+            <h3>CADASTRAR COMO:</h3>
+            
+            <StyledButton type="submit">
+                <Link to="/cadastro-aluno">ALUNO(A)</Link>
+            </StyledButton>
+            <StyledButton type="submit">
+                <Link to="/cadastro-professor">PROFESSOR(A)</Link>
+            </StyledButton>
         </NewAccountContainer>
     )
 }

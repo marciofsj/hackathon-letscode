@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
-import { EnterButton, InputContainer, FooterContainer, LoginContainer, RadioContainer } from "./styles";
+import { InputContainer, FooterContainer, LoginContainer, RadioContainer } from "./styles";
+import { StyledButton } from "../../styles/styledbutton";
 
 export function Login () {
     return (
@@ -26,12 +27,12 @@ export function Login () {
                     <input type="password" name="" placeholder="insira sua senha" id="" />
                 </InputContainer>
 
-                <EnterButton type="submit">
+                <StyledButton type="submit">
                     ENTRAR
-                </EnterButton>
+                </StyledButton>
                 <FooterContainer>
                     <Link to=''>Esqueci minha senha</Link>
-                    <Link to="/cadastro">Nova conta</Link>
+                    <Link to="/novo-cadastro">Nova conta</Link>
                 </FooterContainer>
         </LoginContainer>
     )

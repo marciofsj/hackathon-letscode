@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
     }
 
-    h1, h2{
+    h1, h2, h3 {
         font-family: 'Nova Round', cursive;
     }
 `

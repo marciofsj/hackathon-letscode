@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.div`
+export const NewAccountContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -12,6 +12,10 @@ export const LoginContainer = styled.div`
     margin: 1rem auto;
     padding: 1rem;
     max-width: 50rem;
+
+    h3 {
+        margin: 3rem 0 1rem 0;
+    }
 `
 
 export const InputContainer = styled.form`
@@ -19,7 +23,7 @@ export const InputContainer = styled.form`
     flex-direction: column;
     gap: 0.5;
     margin: 2rem;
-    width: 40%;
+    width: 70%;
     font-size: 1.5rem;
 
     input {
@@ -43,23 +47,13 @@ export const RadioContainer = styled.fieldset`
     }
 `
 
-export const FooterContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 1rem;
-    
-    a {
-        color: black;
-        margin-top: 1rem;
+export const ClassContainer = styled.div`
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+
+    select {
         font-size: 1.5rem;
-
-        &:hover {
-        background: ${(props) => props.theme['blue-2']};
-        color: ${props => props.theme['blue-1']};
-        opacity: 0.7;
+        margin-left: 0.5rem;
+        border-radius: 8px; 
     }
-    }
-   
 `
-
