@@ -1,5 +1,6 @@
 import { NewAccountContainer, InputContainer, RadioContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
+import { Link } from "react-router-dom"
 
 export function NewTeacherAccount () {
     return (
@@ -24,7 +25,9 @@ export function NewTeacherAccount () {
                 <input type="password" name="repetir senha" placeholder="repita a sua senha"/>                            
             </InputContainer>
             <StyledButton type="submit">
-                CADASTRAR
+                <Link to="/professor">
+                    CADASTRAR
+                </Link>
             </StyledButton>
         </NewAccountContainer>
     )

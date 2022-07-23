@@ -21,6 +21,7 @@ export function NewStudentAccount () {
                     TURMA
                     <select name="turma" id="turma">
                         <optgroup label="selecione">
+                            <option value="null">-------</option>
                             <option value="6">6ª</option>
                             <option value="7">7ª</option>
                             <option value="8">8ª</option>

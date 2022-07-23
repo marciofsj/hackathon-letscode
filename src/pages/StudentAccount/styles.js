@@ -50,8 +50,10 @@ export const RadioContainer = styled.fieldset`
 export const ClassContainer = styled.div`
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    margin-top: 0.5rem;
 
     select {
+        height: 2.5rem;
         font-size: 1.5rem;
         margin-left: 0.5rem;
         border-radius: 8px; 
