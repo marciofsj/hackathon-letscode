@@ -4,10 +4,8 @@ export const TeacherMainContainer = styled.div`
     max-width: 70rem;
     margin: 2rem auto;
     padding: 0 1rem;
-    
     display: grid;
     grid-template-columns: 30% 1fr;
-    gap: 2rem;
     align-items: flex-start;
 
     @media (max-width: 768px) {
@@ -27,12 +25,7 @@ export const BodyContainer = styled.div`
     border-radius: 8px;
     margin: 1rem auto;
     padding: 1rem;
-    width: 100%;
-    height: 50rem;
-
-    label {
-        margin: 1rem 0 1rem 0;
-    }
+    max-width: 80%;
 `
 
 export const MenuContainer = styled.aside`
@@ -48,7 +41,6 @@ export const MenuContainer = styled.aside`
     img {
         margin-top: 0.5rem;
         max-width: 100%;
-        height: auto;
     }
 `
 
@@ -57,6 +49,14 @@ export const DivButton = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+        html{
+            font-size: 87.5%;
+        }
+            grid-template-columns: 1fr;
+            gap: 0;
+    }
 
     button {
         border: 0;
@@ -67,12 +67,12 @@ export const DivButton = styled.div`
         align-items: center;
         justify-content: center;
     
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: bold;
     
         cursor: pointer;
     
-        margin-bottom: 1rem;
+        margin-top: 1rem;
     
         background: ${(props) => props.theme['blue-3']};
         color: ${(props) => props.theme['blue-1']};

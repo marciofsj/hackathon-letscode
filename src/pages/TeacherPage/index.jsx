@@ -20,8 +20,6 @@ export function TeacherMainPage () {
 
             <BodyContainer>
                 <h1>Olá, Professor!</h1>
-                <label for="story">Atividade 1</label>
-                
                 <TextEditorContainer>Atividade</TextEditorContainer>
                 <DivButton>
                     <button>CANCELAR</button>
