@@ -1,4 +1,4 @@
-import { TeacherMainContainer, MenuContainer, DivButton } from './styles';
+import { TeacherMainContainer, MenuContainer, DivButton, BodyContainer } from './styles';
 import Logo from '../../images/logo-remove.png';
 import TextEditorContainer from '../../components/TextEditor';
 
@@ -17,15 +17,17 @@ export function TeacherMainPage () {
                 <h2>Hello World</h2>
                 <h2>Hello World</h2>
             </MenuContainer>
-            <h1>Olá, Professor!</h1>
-            <label for="story">Atividade 1</label>
-            
-            <TextEditorContainer>Atividade</TextEditorContainer>
-            <DivButton>
-                <button>CANCELAR</button>
-                <button>ENVIAR</button>
-            </DivButton>
 
+            <BodyContainer>
+                <h1>Olá, Professor!</h1>
+                <label for="story">Atividade 1</label>
+                
+                <TextEditorContainer>Atividade</TextEditorContainer>
+                <DivButton>
+                    <button>CANCELAR</button>
+                    <button>ENVIAR</button>
+                </DivButton>
+            </BodyContainer>
         </TeacherMainContainer>
     )
 }

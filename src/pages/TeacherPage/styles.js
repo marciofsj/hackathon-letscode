@@ -1,7 +1,24 @@
 import styled from "styled-components";
 
 export const TeacherMainContainer = styled.div`
-    flex: 1;
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+    html{
+        font-size: 87.5%;
+    }
+        grid-template-columns: 1fr;
+}
+`
+
+export const BodyContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,8 +38,6 @@ export const TeacherMainContainer = styled.div`
 export const MenuContainer = styled.aside`
     margin: 0;
     padding: 0;
-    position: fixed;
-    width: 15%;
     left: 0;
     top: 0rem;
     height: 100%;
@@ -38,8 +53,10 @@ export const MenuContainer = styled.aside`
 `
 
 export const DivButton = styled.div`
-    display: flex;
-    align-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: flex-start;
 
     button {
         border: 0;
