@@ -12,8 +12,10 @@ export function NewStudentAccount () {
             <InputContainer>
                 <p>NOME</p>
                 <input type="text" name="nome" placeholder="insira seu nome"/>
+                <p>E-MAIL</p>
+                <input type="email" name="e-mail" placeholder="insira seu e-mail"/>
                 <p>DATA DE NASCIMENTO</p>
-                <input type="date" name="data de nascimento" placeholder="insira sua data de nascimento"/>     
+                <input type="date" name="data de nascimento"/>     
                 <ClassContainer>
                     {/* <label for="turma">
                         TURMA

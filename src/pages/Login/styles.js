@@ -12,6 +12,12 @@ export const LoginContainer = styled.div`
     margin: 1rem auto;
     padding: 1rem;
     max-width: 50rem;
+
+    @media (max-width: 768px) {
+        html{
+            font-size: 87.5%;
+        }
+    }
 `
 
 export const InputContainer = styled.form`
@@ -26,6 +32,11 @@ export const InputContainer = styled.form`
         font-size: 2rem;
         margin-bottom: 1rem;
         border-radius: 8px;
+
+        &::placeholder {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
     }
 `
 
@@ -40,6 +51,10 @@ export const RadioContainer = styled.fieldset`
         margin: .4rem;
         height: 1rem;
         width: 1rem;
+
+        &:placeholder-shown {
+            padding: 0.5rem;
+        }
     }
 `
 

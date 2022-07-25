@@ -11,7 +11,7 @@ export const TextArea = styled.div`
         border-radius: 8px;
         max-width: 80%;
 
-        &:placeholder-shown {
+        &::placeholder {
             font-weight: normal;
             padding: 0.5rem;
         }

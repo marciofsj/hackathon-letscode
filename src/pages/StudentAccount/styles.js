@@ -29,7 +29,19 @@ export const InputContainer = styled.form`
     input {
         font-size: 2rem;
         margin-bottom: 1rem;
-        border-radius: 8px;
+        border-radius: 8px; 
+
+        &::placeholder {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    select {
+        &::placeholder {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
     }
 `
 

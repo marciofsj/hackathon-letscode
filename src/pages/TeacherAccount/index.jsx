@@ -13,12 +13,14 @@ export function NewTeacherAccount () {
             <InputContainer>
                 <p>NOME</p>
                 <input type="text" name="nome" placeholder="insira seu nome"/>
+                <p>E-MAIL</p>
+                <input type="email" name="e-mail" placeholder="insira seu e-mail"/>
                 <p>RG</p>
                 <input type="text" name="RG" placeholder="insira seu RG"/>
                 <p>CPF</p>
                 <input type="text" name="CPF" placeholder="insira seu CPF"/>
                 <p>DATA DE NASCIMENTO</p>
-                <input type="date" name="data de nascimento" placeholder="insira sua data de nascimento"/>
+                <input type="date" name="data de nascimento"/>
                 <p>SENHA</p>
                 <input type="password" name="nova senha" placeholder="crie uma senha"/>                             
                 <p>REPITA A SENHA</p>

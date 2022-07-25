@@ -25,7 +25,7 @@ export const BodyContainer = styled.div`
     border-radius: 8px;
     margin: 1rem auto;
     padding: 1rem;
-    max-width: 80%;
+    max-width: 80%; 
 `
 
 export const MenuContainer = styled.aside`

@@ -22,7 +22,7 @@ export function Login () {
                         </div>
                     </RadioContainer>
                     <p>LOGIN</p>
-                    <input type="email" name="insira seu e-mail" placeholder="insira seu e-mail" id="" />
+                    <input type="email" name="insira seu e-mail" placeholder="insira seu e-mail" id=""/>
                     <p>SENHA</p>
                     <input type="password" name="" placeholder="insira sua senha" id="" />
                 </InputContainer>

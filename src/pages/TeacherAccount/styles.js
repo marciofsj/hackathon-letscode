@@ -6,7 +6,7 @@ export const NewAccountContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background:  ${props => props.theme['blue-1']};
+    background: ${props => props.theme['blue-1']};
     font-size: 1.5rem;
     border-radius: 8px;
     margin: 1rem auto;
@@ -30,6 +30,11 @@ export const InputContainer = styled.form`
         font-size: 2rem;
         margin-bottom: 1rem;
         border-radius: 8px;
+
+        &::placeholder {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
     }
 `
 
@@ -44,5 +49,9 @@ export const RadioContainer = styled.fieldset`
         margin: .4rem;
         height: 1rem;
         width: 1rem;
+
+        &:placeholder-shown {
+            padding: 0.5rem;
+        }
     }
 `
