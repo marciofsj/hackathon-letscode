@@ -1,6 +1,6 @@
-import { TeacherMainContainer, MenuContainer } from './styles';
+import { TeacherMainContainer, MenuContainer, DivButton } from './styles';
 import Logo from '../../images/logo-remove.png';
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import TextEditorContainer from '../../components/TextEditor';
 
 export function TeacherMainPage () {
     return (
@@ -17,15 +17,14 @@ export function TeacherMainPage () {
                 <h2>Hello World</h2>
                 <h2>Hello World</h2>
             </MenuContainer>
-            <h1>Hello World</h1>
+            <h1>Olá, Professor!</h1>
             <label for="story">Atividade 1</label>
-            <textarea id="story" name="story"
-                rows="5" cols="33">
-            </textarea>
-            <label for="story">Atividade 2</label>
-            <textarea id="story" name="story"
-                rows="5" cols="33">
-            </textarea>
+            
+            <TextEditorContainer>Atividade</TextEditorContainer>
+            <DivButton>
+                <button>CANCELAR</button>
+                <button>ENVIAR</button>
+            </DivButton>
 
         </TeacherMainContainer>
     )
