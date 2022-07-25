@@ -26,6 +26,15 @@ export const BodyContainer = styled.div`
     margin: 1rem auto;
     padding: 1rem;
     max-width: 80%; 
+
+    .new__button {
+        width: 100%;
+        margin-top: 1rem;
+
+        @media (max-width: 768px) {
+            width: 50%;     
+        }
+    }
 `
 
 export const MenuContainer = styled.aside`

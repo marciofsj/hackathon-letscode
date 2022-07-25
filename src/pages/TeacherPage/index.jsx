@@ -20,6 +20,9 @@ export function TeacherMainPage () {
 
             <BodyContainer>
                 <h1>Olá, Professor!</h1>
+                <DivButton className='new__button'>
+                    <button>NOVA ATIVIDADE</button>
+                </DivButton>
                 <TextEditorContainer>Atividade</TextEditorContainer>
                 <DivButton>
                     <button>CANCELAR</button>
