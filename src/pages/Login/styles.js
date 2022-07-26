@@ -13,9 +13,17 @@ export const LoginContainer = styled.div`
     padding: 1rem;
     max-width: 50rem;
 
+    img {
+        margin-top: 1rem;
+    }
+
     @media (max-width: 768px) {
-        html{
+        html {
             font-size: 87.5%;
+        }
+        img {
+            height: 80%;
+            width: 80%;
         }
     }
 `
@@ -25,13 +33,13 @@ export const InputContainer = styled.form`
     flex-direction: column;
     gap: 0.5;
     margin: 2rem;
-    width: 40%;
+    width: 70%;
     font-size: 1.5rem;
 
     input {
         font-size: 2rem;
         margin-bottom: 1rem;
-        border-radius: 8px;
+        border-radius: 8px; 
 
         &::placeholder {
             padding: 0.5rem;

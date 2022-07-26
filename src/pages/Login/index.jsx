@@ -1,13 +1,21 @@
-
 import { Link } from "react-router-dom";
 import { InputContainer, FooterContainer, LoginContainer, RadioContainer } from "./styles";
 import { StyledButton } from "../../styles/styledbutton";
+import { useState } from "react";
+import logomarca from '../../assets/images/Edutrip.png'
 
 export function Login () {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = () => {
+        console.log(email)
+        console.log(password)
+    }
+
     return (
         <LoginContainer>
-                <h1>KAREN</h1>
-                <h2>Boss School</h2>
+                <img src={logomarca} alt="lápis desenhando um avião de papel" />
 
                 <InputContainer>
                     <RadioContainer>
@@ -22,12 +30,26 @@ export function Login () {
                         </div>
                     </RadioContainer>
                     <p>LOGIN</p>
-                    <input type="email" name="insira seu e-mail" placeholder="insira seu e-mail" id=""/>
+                    <input 
+                        type="email" 
+                        name="login" 
+                        placeholder="insira seu e-mail"
+                        required="required" 
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                    />
                     <p>SENHA</p>
-                    <input type="password" name="" placeholder="insira sua senha" id="" />
+                    <input 
+                        type="password" 
+                        name="senha" 
+                        placeholder="insira sua senha" 
+                        required="required"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
                 </InputContainer>
 
-                <StyledButton type="submit">
+                <StyledButton type="submit" onClick={handleLogin}>
                     ENTRAR
                 </StyledButton>
                 <FooterContainer>

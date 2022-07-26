@@ -13,8 +13,18 @@ export const NewAccountContainer = styled.div`
     padding: 1rem;
     max-width: 50rem;
 
-    h3 {
-        margin: 3rem 0 1rem 0;
+    img {
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        html {
+            font-size: 87.5%;
+        }
+        img {
+            height: 80%;
+            width: 80%;
+        }
     }
 `
 
