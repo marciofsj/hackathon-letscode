@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NewAccountContainer, InputContainer, ClassContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
 import logomarca from '../../assets/images/Edutrip.png'
+import { Link } from "react-router-dom";
 
 export function NewStudentAccount () {
     const [newname, setNewName] = useState ('');
@@ -70,7 +71,9 @@ export function NewStudentAccount () {
                 />                             
             </InputContainer>
             <StyledButton type="submit">
-                CADASTRAR
+                <Link to="/aluno">
+                    CADASTRAR
+                </Link>
             </StyledButton>
         </NewAccountContainer>
     )
