@@ -17,7 +17,7 @@ export function StudentMainPage () {
                 <TextEditorContainer>Atividade</TextEditorContainer>
                 <DivButton>
                     <button>CANCELAR</button>
-                    <button>ENVIAR</button>
+                    <button>RESPONDER</button>
                 </DivButton>
             </BodyContainer>
         </StudentMainContainer>

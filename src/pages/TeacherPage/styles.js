@@ -101,3 +101,14 @@ export const DivButton = styled.div`
         }
     }
 `
+
+export const SelectComponent = styled.div`
+    display: flex;
+    align-items: left;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    select {
+        margin-right: 1.5rem;
+    }
+`

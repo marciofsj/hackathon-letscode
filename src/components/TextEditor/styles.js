@@ -29,14 +29,3 @@ export const TextArea = styled.div`
         }
     }
 `
-
-export const SelectComponent = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-
-    select {
-        margin-right: 1.5rem;
-    }
-`
