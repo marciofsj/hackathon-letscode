@@ -1,12 +1,12 @@
 import { StyledButton } from "../../styles/styledbutton"
 import { NewAccountContainer } from "./styles";
 import { Link } from 'react-router-dom';
+import logomarca from '../../assets/images/Edutrip.png'
 
 export function NewAccount () {
     return (
         <NewAccountContainer>
-            <h1>KAREN</h1>
-            <h2>Boss School</h2>
+            <img src={logomarca} alt="lápis desenhando um avião de papel" />
 
             <h3>CADASTRAR COMO:</h3>
             

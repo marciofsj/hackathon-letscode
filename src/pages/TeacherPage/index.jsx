@@ -1,5 +1,5 @@
 import { TeacherMainContainer, MenuContainer, DivButton, BodyContainer } from './styles';
-import Logo from '../../images/logo-remove.png';
+import Logo from '../../assets/images/logo.png'
 import TextEditorContainer from '../../components/TextEditor';
 
 export function TeacherMainPage () {
