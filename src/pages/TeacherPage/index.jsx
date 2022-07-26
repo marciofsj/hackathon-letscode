@@ -7,7 +7,7 @@ export function TeacherMainPage () {
         <TeacherMainContainer>
             <MenuContainer>
                 <img src={Logo}/>
-                <h2>Hello World</h2>
+                <h2>Histórico de exercícios</h2>
                 <h2>Hello World</h2>
                 <h2>Hello World</h2>
                 <h2>Hello World</h2>

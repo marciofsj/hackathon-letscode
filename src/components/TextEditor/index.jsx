@@ -1,12 +1,32 @@
 import React, { Component } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { TextArea } from './styles';
+import { TextArea, SelectComponent } from './styles';
 
 class TextEditorContainer extends Component {
     render() {
         return (
             <TextArea>
+                <SelectComponent>
+                    <label for="turma">TURMA</label>
+                    <select name="turma" id="turma">
+                        <optgroup label="selecione">
+                            <option value="null">-------</option>
+                            <option value="6">6ª</option>
+                            <option value="7">7ª</option>
+                            <option value="8">8ª</option>
+                            <option value="9">9ª</option>
+                        </optgroup>
+                    </select>
+                    <label for="matéria">MATÉRIA</label>
+                    <select name="matéria" id="matéria">
+                        <optgroup label="selecione">
+                            <option value="null">-------</option>
+                            <option value="inglês">INGLÊS</option>
+                            <option value="espanhol">ESPANHOL</option>
+                        </optgroup>
+                    </select>
+                </SelectComponent>
                 <input type="text" placeholder='insira o título'/>
                 <CKEditor
                     editor={ ClassicEditor }
