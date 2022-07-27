@@ -1,6 +1,7 @@
-import { StudentMainContainer, BodyContainer, DivButton, MenuContainer } from './styles';
+import { StudentMainContainer, BodyContainer, MenuContainer } from './styles';
 import Logo from '../../assets/images/logo.png';
-import TextEditorContainer from '../../components/TextEditor';
+import Uk from '../../assets/images/UK.svg';
+import Spain from '../../assets/images/Spain.svg'
 
 export function StudentMainPage () {
     return (
@@ -13,12 +14,21 @@ export function StudentMainPage () {
             </MenuContainer>
             <BodyContainer>
                 <h1>Olá, Aluno!</h1>
-                
-                <TextEditorContainer>Atividade</TextEditorContainer>
-                <DivButton>
-                    <button>CANCELAR</button>
-                    <button>RESPONDER</button>
-                </DivButton>
+                {/* <img type='button' src={Uk} alt='Bandeira do Reino Unido'/>
+                <img type='button' src={Spain} alt='Bandeira da Espanha'/> */}
+                <div>
+                    {/* <form action="https://google.com">
+                        <input type="submit" value="Go to Google" />
+                    </form> */}
+                    <form action='/'>
+                        <input type="image" src={Uk}/>
+                    </form>
+                    <form action='/'>
+                        <input type="image" src={Spain}/>
+                    </form>
+                </div>
+                <h3>Recados e avisos</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus natus alias enim numquam maxime voluptatem earum, sapiente animi quae qui sequi dolorem vitae perspiciatis ullam nisi, ut harum in sint!</p>
             </BodyContainer>
         </StudentMainContainer>
     )

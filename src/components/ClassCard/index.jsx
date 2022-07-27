@@ -1,5 +1,6 @@
 import { DivButton, ClassCardMain, HeadContainer} from './styles';
 import TextEditorContainer from '../../components/TextEditor';
+import { Link } from 'react-router-dom';
 
 export function ClassCard () {
     return (
@@ -17,7 +18,13 @@ export function ClassCard () {
             </textarea>
             <TextEditorContainer/>
             <DivButton>
-                <button>VOLTAR</button>
+                <button>
+                    VOLTAR
+                    {/* <Link to="/professor">VOLTAR</Link> */}
+                </button>
+                <button>
+                    ENVIAR
+                </button>
             </DivButton>
         </ClassCardMain>
     )

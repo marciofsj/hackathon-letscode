@@ -13,7 +13,7 @@ export const StudentMainContainer = styled.div`
         font-size: 87.5%;
     }
         grid-template-columns: 1fr;
-}
+    }
 `
 
 export const BodyContainer = styled.div`
@@ -26,6 +26,31 @@ export const BodyContainer = styled.div`
     margin: 1rem auto;
     padding: 1rem;
     max-width: 80%; 
+
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+        
+        form {        
+            width: 8rem;
+            height: 8rem;
+            margin: 2rem 0 -2rem 0;
+        }
+        
+        @media (max-width: 508px) {
+            justify-content: center;
+            gap: 1rem;
+
+            form {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    h3 {
+        margin: 2rem 0 1rem 0
+    }
 
     .new__button {
         width: 100%;
