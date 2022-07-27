@@ -1,11 +1,11 @@
-import { TeacherMainContainer, MenuContainer } from './styles';
+import { ClassMainContainer, MenuContainer } from './styles';
 import Logo from '../../assets/images/logo.png'
-import { TeacherCard } from '../../components/TeacherCard';
+import { ClassCard } from '../../components/ClassCard'
 
 
-export function TeacherMainPage () {
+export function ClassMainPage () {
     return (
-        <TeacherMainContainer>
+        <ClassMainContainer>
             <MenuContainer>
                 <img src={Logo}/>
                 <h2>Histórico de exercícios</h2>
@@ -18,7 +18,8 @@ export function TeacherMainPage () {
                 <p>Hello World</p>
                 <p>Hello World</p>
             </MenuContainer>
-            <TeacherCard />         
-        </TeacherMainContainer>
+            <ClassCard />
+              
+        </ClassMainContainer>
     )
 }
