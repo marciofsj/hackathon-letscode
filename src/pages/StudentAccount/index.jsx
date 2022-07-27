@@ -11,6 +11,18 @@ export function NewStudentAccount () {
     const [newpassword, setNewPassword] = useState ('');
     const [repeatpassword, setRepetNewPassword] = useState ('');
 
+    const [emailErr, setEmailErr] = useState(false);
+    const [pwdError, setPwdError] = useState(false);
+
+    const validate = () => {
+        if (!validEmail.test(newemail)) {
+           setEmailErr(true);
+        }
+        if (!validPassword.test(newpassword)) {
+           setPwdError(true);
+        }
+    };
+
     return (
         <NewAccountContainer>
             <img src={logomarca} alt="lápis desenhando um avião de papel" />
@@ -74,6 +86,7 @@ export function NewStudentAccount () {
                 <Link to="/aluno">
                     CADASTRAR
                 </Link>
+
             </StyledButton>
         </NewAccountContainer>
     )
