@@ -42,7 +42,7 @@ export function TeacherCard () {
                     </select>
                 </div>
             </SelectComponent>
-            
+            <input type="text" placeholder='insira o título'/>
             <TextEditorContainer>Atividade</TextEditorContainer>
             <DivButton>
                 <button>CANCELAR</button>

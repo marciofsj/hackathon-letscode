@@ -19,6 +19,18 @@ export const TeacherCardMain = styled.div`
             width: 50%;     
         }
     }
+
+    input {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        width: 80%;
+
+        &::placeholder {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
+    }
+
 `
 
 export const DivButton = styled.div`

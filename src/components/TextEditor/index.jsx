@@ -7,7 +7,6 @@ class TextEditorContainer extends Component {
     render() {
         return (
             <TextArea>    
-                <input type="text" placeholder='insira o título'/>
                 <CKEditor
                     editor={ ClassicEditor }
                     data="<p></p>"
