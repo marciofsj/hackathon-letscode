@@ -108,7 +108,21 @@ export const SelectComponent = styled.div`
     gap: 0.5rem;
     flex-wrap: wrap;
 
+    margin-top: 1rem;
+    font-size: 1.5rem;
+
+    div {
+        margin-top: 1rem;
+    }
+
     select {
         margin-right: 1.5rem;
+        font-size: 1.5rem;
+        border-radius: 8px;
+
+        &::placeholder {
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
     }
 `

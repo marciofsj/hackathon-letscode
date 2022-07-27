@@ -35,6 +35,8 @@ export function TeacherMainPage () {
                                 <option value="9">9ª</option>
                             </optgroup>
                         </select>
+                    </div>
+                    <div>
                         <label for="matéria">MATÉRIA:</label>
                         <select name="matéria" id="matéria">
                             <optgroup label="selecione">
@@ -44,8 +46,6 @@ export function TeacherMainPage () {
                             </optgroup>
                         </select>
                     </div>
-                </SelectComponent>
-                <SelectComponent>
                     <div>
                         <label for="categoria">CATEGORIA:</label>
                         <select name="categoria" id="categoria">
