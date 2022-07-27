@@ -1,35 +1,37 @@
 import { useState } from "react";
 import { NewAccountContainer, InputContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import { validEmail, validPassword } from '../../utils/regex.js'
 import logomarca from '../../assets/images/Edutrip.png'
 
 export function NewTeacherAccount() {
-  const [newname, setNewName] = useState('');
-  const [newemail, setNewEmail] = useState('');
-  const [newrg, setNewRG] = useState('');
-  const [newcpf, setNewCPF] = useState('');
-  const [newdate, setNewDate] = useState('');
-  const [newpassword, setNewPassword] = useState('');
-  const [repeatpassword, setRepetNewPassword] = useState('');
-  const [validated, setValitadion] = useState(false)
+  const [newEmail, setNewEmail] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [repeatPassword, setRepetNewPassword] = useState('');
+  // const [newName, setNewName] = useState('');
+  // const [newRG, setNewRG] = useState('');
+  // const [newCPF, setNewCPF] = useState('');
+  // const [newDate, setNewDate] = useState('');
+  // const [validated, setValitadion] = useState(false)
 
-  const [emailErr, setEmailErr] = useState(true);
-  const [pwdError, setPwdError] = useState(true);
-  const navigate = useNavigate()
+  const [emailErr, setEmailErr] = useState(false);
+  const [pwdError, setPaswordError] = useState(false);
 
   const validate = () => {
-    if (!validEmail.test(newemail)) {
+    if (!validEmail.test(newEmail)) {
+      setPaswordError(true);
       alert('Email inválido')
-    }else{setPwdError(false)}
-    if (!validPassword.test(newpassword) || (newpassword !== repeatpassword)) {
-      alert('Senha inválida')
-    }else{setEmailErr(false)};
-    if(!emailErr && !pwdError){
-      return navigate('/professor')
     }
-  }
+    if (!validPassword.test(newPassword) || (newPassword !== repeatPassword)) {
+      setEmailErr(true);
+      alert('Senha inválida')
+    }
+    if( !emailErr && !pwdError ){
+      
+    }
+
+  };
 
   return (
     <NewAccountContainer>
@@ -51,7 +53,7 @@ export function NewTeacherAccount() {
           type="email"
           name="e-mail"
           placeholder="insira seu e-mail"
-          value={newemail}
+          value={newEmail}
           onChange={e => setNewEmail(e.target.value)}
         />
         {/*<p>RG</p>
@@ -82,7 +84,7 @@ export function NewTeacherAccount() {
           type="password"
           name="nova senha"
           placeholder="crie uma senha"
-          value={newpassword}
+          value={newPassword}
           onChange={e => setNewPassword(e.target.value)}
         />
         <p>REPITA A SENHA</p>
@@ -90,19 +92,17 @@ export function NewTeacherAccount() {
           type="password"
           name="repetir senha"
           placeholder="repita a sua senha"
-          value={repeatpassword}
+          value={repeatPassword}
           onChange={e => setRepetNewPassword(e.target.value)}
         />
       </InputContainer>
       <StyledButton type="submit" onClick={validate}>
-        {/* {
-          (!emailErr && !pwdError) && (
-            <Link to={"/professor"}>
-              CADASTRAR
-            </Link>
-          )
-        } */}
         CADASTRAR
+        {
+          (!emailErr && !pwdError) && (
+            <Link to={"/professor"}/>
+          )
+        }
 
       </StyledButton>
     </NewAccountContainer>
