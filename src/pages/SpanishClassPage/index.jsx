@@ -1,9 +1,9 @@
 import { ClassMainContainer, MenuContainer } from './styles';
 import Logo from '../../assets/images/logo.png'
-import { ClassCard } from '../../components/ClassCard'
+import { SpanishClassCard } from '../../components/SpanishClassCard'
 
 
-export function ClassMainPage () {
+export function SpanishClassMainPage () {
     return (
         <ClassMainContainer>
             <MenuContainer>
@@ -18,7 +18,7 @@ export function ClassMainPage () {
                 <p>Hello World</p>
                 <p>Hello World</p>
             </MenuContainer>
-            <ClassCard />
+            <SpanishClassCard />
               
         </ClassMainContainer>
     )

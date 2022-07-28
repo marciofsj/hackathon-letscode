@@ -4,7 +4,7 @@ import TextEditorContainer from '../../components/TextEditor';
 export function TeacherCard () {
     return (
         <TeacherCardMain>
-            <h1>Olá, Professor!</h1>
+            <h1>OLÁ, PROFESSOR!</h1>
             <DivButton className='new__button'>
                 <button>NOVA ATIVIDADE</button>
             </DivButton>
@@ -38,6 +38,7 @@ export function TeacherCard () {
                             <option value="null">-------</option>
                             <option value="exercício">EXERCÍCIO</option>
                             <option value="conteúdo">CONTEÚDO</option>
+                            <option value="conteúdo">EXTRA CURRICULAR</option>
                         </optgroup>
                     </select>
                 </div>
@@ -45,6 +46,7 @@ export function TeacherCard () {
             <input type="text" placeholder='insira o título'/>
             <TextEditorContainer>Atividade</TextEditorContainer>
             <DivButton>
+                {/* NÃO ENCAMINHAR A NENHUMA PAGE. APENAS AÇÃO DOS BOTÕES */}
                 <button>CANCELAR</button>
                 <button>ENVIAR</button>
             </DivButton>

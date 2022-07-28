@@ -5,7 +5,8 @@ import { NewTeacherAccount } from "./pages/TeacherAccount";
 import { NewStudentAccount } from "./pages/StudentAccount";
 import { TeacherMainPage } from "./pages/TeacherPage";
 import { StudentMainPage } from "./pages/StudentPage";
-import { ClassMainPage } from "./pages/ClassPage";
+import { EnglishClassMainPage } from "./pages/EnglishClassPage";
+import { SpanishClassMainPage } from "./pages/SpanishClassPage";
 
 
 export function Router () {
@@ -17,7 +18,8 @@ export function Router () {
             <Route path='/cadastro-aluno' element={<NewStudentAccount/>}></Route>
             <Route path='/professor' element={<TeacherMainPage/>}></Route>
             <Route path='/aluno' element={<StudentMainPage/>}></Route>
-            <Route path='/materia' element={<ClassMainPage/>}></Route>
+            <Route path='/materia-ingles' element={<EnglishClassMainPage/>}></Route>
+            <Route path='/materia-espanhol' element={<SpanishClassMainPage/>}></Route>
         </Routes>
     )
 }
