@@ -36,7 +36,7 @@ export function NewTeacherAccount() {
     if (!pwdError && !emailErr) {
       navigate('/professor')
     }
-  };
+  }
 
   return (
     <NewAccountContainer>
