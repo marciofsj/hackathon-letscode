@@ -12,7 +12,7 @@ export function NewTeacherAccount() {
   const [newCPF, setNewCPF] = useState('');
   const [newDate, setNewDate] = useState('');
   const [newPassword, setNewPassword] = useState('');
-  const [repeatPassword, setRepetNewPassword] = useState('');
+  const [repeatPassword, setRepeatNewPassword] = useState('');
   const [validated, setValitadion] = useState(true)
   const navigate = useNavigate()
 
@@ -107,7 +107,7 @@ export function NewTeacherAccount() {
           name="repetir senha"
           placeholder="repita a sua senha"
           value={repeatPassword}
-          onChange={e => setRepetNewPassword(e.target.value)}
+          onChange={e => setRepeatNewPassword(e.target.value)}
         />
       </InputContainer>
       <StyledButton type="submit" onClick={() => validate()} >
