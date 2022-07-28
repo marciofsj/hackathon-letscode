@@ -15,17 +15,21 @@ export function NewTeacherAccount() {
   const [repeatpassword, setRepetNewPassword] = useState('');
   const [validated, setValitadion] = useState(false)
 
-  const [emailErr, setEmailErr] = useState(false);
-  const [pwdError, setPwdError] = useState(false);
+  const [emailErr, setEmailErr] = useState(true);
+  const [pwdError, setPwdError] = useState(true);
 
   const validate = () => {
-    if (!validEmail.test(newemail)) {
-      setPwdError(true);
+    if (validEmail.test(newemail)) {
+      return setEmailErr(false);
+    } else {
       alert('Email inválido')
+      return setEmailErr(true)
     }
-    if (!validPassword.test(newpassword) || (newpassword !== repeatpassword)) {
-      setEmailErr(true);
-      alert('Senha inválida')
+    if ((validPassword.test(newpassword)) && newpassword === repeatpassword) {
+      return setPwdError(false);
+    } else {
+      alert('Senha inválida');
+      return setPwdError(true)
     }
   };
 
@@ -92,14 +96,15 @@ export function NewTeacherAccount() {
           onChange={e => setRepetNewPassword(e.target.value)}
         />
       </InputContainer>
-      <StyledButton type="submit" onClick={validate}>
-        {
-          (emailErr && pwdError) && (
+      <StyledButton type="submit" onClick={() => validate()} >
+        { 
+          (!emailErr && !pwdError) && (
             <Link to={"/professor"}>
-              CADASTRAR
+                CADASTRAR
             </Link>
           )
         }
+        
 
       </StyledButton>
     </NewAccountContainer>
