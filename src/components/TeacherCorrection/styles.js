@@ -65,7 +65,6 @@ export const DivButton = styled.div`
     
         background: ${(props) => props.theme['blue-3']};
         color: ${(props) => props.theme['blue-1']};
-        box-shadow: 1px 1px 10px gray;
     
         &:hover {
             background: ${(props) => props.theme['blue-2']};

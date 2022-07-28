@@ -65,7 +65,7 @@ export const DivButton = styled.div`
     
         background: ${(props) => props.theme['blue-3']};
         color: ${(props) => props.theme['blue-1']};
-        box-shadow: 1px 1px 10px gray;
+        box-shadow: 1px 1px 5px gray;
     
         &:hover {
             background: ${(props) => props.theme['blue-2']};
@@ -90,4 +90,5 @@ export const SubjectContainer = styled.div`
     font-size: 1.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
+    box-shadow: 1px 1px 5px gray;
 `

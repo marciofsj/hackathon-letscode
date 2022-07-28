@@ -25,7 +25,7 @@ export function Login () {
 
                 <InputContainer>
                     <RadioContainer>
-                        <legend>Você é:</legend>
+                        <legend>Você é um:</legend>
                         <div>
                             <input type="radio" name="logar como" id="aluno"/>
                             <label for="aluno">Aluno</label>

@@ -18,7 +18,7 @@ export const StyledButton = styled.button`
 
     background: ${(props) => props.theme['blue-3']};
     color: ${(props) => props.theme['blue-1']};
-    box-shadow: 1px 1px 10px black;
+    box-shadow: 1px 1px 5px black;
 
 
     &:hover {
