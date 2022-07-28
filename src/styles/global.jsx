@@ -16,10 +16,11 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    border-style, input, text-area, button{
+    border-style, input, select, text-area, button{
         font-family: 'Nunito', sans-serif;
         font-weight: 400;
         font-size: 1rem;
+        box-shadow: 1px 1px 5px gray;
     }
 
     h1, h2, h3 {

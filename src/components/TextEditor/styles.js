@@ -5,6 +5,7 @@ export const TextArea = styled.div`
     margin: 1rem;
     border-radius: 8px;
     font-size: 1rem;
+    box-shadow: 1px 1px 5px gray;
 
     input {
         margin: 1rem 0rem;

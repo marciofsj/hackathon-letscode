@@ -90,4 +90,5 @@ export const SubjectContainer = styled.div`
     font-size: 1.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
+    box-shadow: 1px 1px 5px gray;
 `
