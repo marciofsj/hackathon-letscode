@@ -2,13 +2,12 @@ import styled from "styled-components"
 
 export const StyledButton = styled.button`
     width: 40%;
+    height: 3rem;
     border: 0;
-    padding: 1rem;
     border-radius: 8px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    align-content: center;
 
     font-size: 1rem;
     font-weight: bold;
@@ -28,5 +27,9 @@ export const StyledButton = styled.button`
     a {
         text-decoration: none;
         color: ${(props) => props.theme['blue-1']};
+        width: 100%;
+        height: 3rem;
+        display: grid;
+        align-content: center;
     }
 `
