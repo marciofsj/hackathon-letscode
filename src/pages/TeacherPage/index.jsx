@@ -9,14 +9,9 @@ export function TeacherMainPage () {
             <MenuContainer>
                 <img src={Logo}/>
                 <h2>Histórico de exercícios</h2>
-                <p>La actividad doble</p>
-                <p>Exercición tien</p>
-                <p>Hello World</p>
-                <p>Hello World</p>
-                <p>Hello World</p>
-                <p>Hello World</p>
-                <p>Hello World</p>
-                <p>Hello World</p>
+                <p>The Shepherd's Boy and the Wolf</p>
+                <p>The Middle - Zedd feat. Maren Morris and Grey </p>
+                <p>Exercise I - Grammar</p>
             </MenuContainer>
             <TeacherCard />         
         </TeacherMainContainer>
