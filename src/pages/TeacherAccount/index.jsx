@@ -22,7 +22,7 @@ export function NewTeacherAccount() {
   const validate = () => {
 
     if (!validEmail.test(newEmail) || ((!validPassword.test(newPassword)) || newPassword !== repeatPassword)
-        || (!validCPF.test(newCPF)) || (!validRG.test(newRG)) || (!validName.test(newName))) {
+      || (!validCPF.test(newCPF)) || (!validRG.test(newRG)) || (!validName.test(newName))) {
 
       if (!validName.test(newName)) {
         return alert('insira um Nome válido sem caracteres especiais')
@@ -31,6 +31,7 @@ export function NewTeacherAccount() {
         return alert('Email inválido');
       }
       if (!validRG.test(newRG)) {
+        console.log(newRG)
         return alert('insira um RG válido')
       }
       if (!validCPF.test(newCPF)) {
@@ -51,9 +52,6 @@ export function NewTeacherAccount() {
       }
     }
   }
-  // const saveLogin = (logionAtempt,teachers) => { 
-  //     teachers.push(logionAtempt)
-  //   }
   
   const validateDuplicate = () =>{
     const teachers = JSON.parse(localStorage.getItem('teachersAccount'))
@@ -65,7 +63,7 @@ export function NewTeacherAccount() {
       return true
     }
     else{
-      alert("email existente")
+      alert("Email já existente")
       return false
     }
 
