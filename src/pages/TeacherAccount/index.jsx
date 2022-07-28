@@ -111,7 +111,9 @@ export function NewTeacherAccount() {
         />
       </InputContainer>
       <StyledButton type="submit" onClick={() => validate()} >
-        CADASTRAR
+        <Link to="/professor">
+          CADASTRAR
+        </Link>
       </StyledButton>
     </NewAccountContainer>
   )

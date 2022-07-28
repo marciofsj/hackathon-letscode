@@ -76,9 +76,16 @@ export const DivButton = styled.div`
         }
     }
 `
-export const HeadContainer = styled.div `
+export const HeadContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 2rem; 
+    margin-bottom: 1rem;
+`
+
+export const SubjectContainer = styled.div`
+    background: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
     margin-bottom: 1rem;
 `

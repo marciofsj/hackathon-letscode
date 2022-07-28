@@ -27,7 +27,7 @@ export function NewStudentAccount () {
         <NewAccountContainer>
             <img src={logomarca} alt="lápis desenhando um avião de papel" />
 
-            <h3>OLÁ, ESTUDANTE!</h3>
+            <h3>OLÁ, ALUNO!</h3>
 
             <InputContainer>
                 <p>NOME</p>
