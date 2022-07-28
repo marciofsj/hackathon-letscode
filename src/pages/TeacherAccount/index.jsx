@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NewAccountContainer, InputContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
 import { Link, useNavigate } from "react-router-dom"
-import { validEmail, validPassword } from '../../utils/regex.js'
+import { validEmail, validPassword, validCPF, validRG, validName } from '../../utils/regex.js'
 import logomarca from '../../assets/images/Edutrip.png'
 
 export function NewTeacherAccount() {
@@ -13,7 +13,7 @@ export function NewTeacherAccount() {
   const [newDate, setNewDate] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [repeatPassword, setRepeatNewPassword] = useState('');
-  const [validated, setValitadion] = useState(true)
+  const [validated, setValidation] = useState(true)
   const navigate = useNavigate()
 
   const [emailErr, setEmailErr] = useState(true);
@@ -21,18 +21,27 @@ export function NewTeacherAccount() {
 
   const validate = () => {
 
-    if (!validEmail.test(newEmail) || ((!validPassword.test(newPassword)) || newPassword !== repeatPassword)) {
-      
+    if (!validEmail.test(newEmail) || ((!validPassword.test(newPassword)) || newPassword !== repeatPassword)
+        || (!validCPF.test(newCPF)) || (!validRG.test(newRG)) || (!validName.test(newName))) {
+
+      if (!validName.test(newName)) {
+        return alert('insira um Nome válido sem caracteres especiais')
+      }
       if (!validEmail.test(newEmail)) {
         return alert('Email inválido');
       }
+      if (!validRG.test(newRG)) {
+        return alert('insira um RG válido')
+      }
+      if (!validCPF.test(newCPF)) {
+        return alert('Insira um CPF válido')
+      }
       if ((!validPassword.test(newPassword)) 
         || newPassword !== repeatPassword) {
-        return alert('Senha inválida');
+        return alert('Senha inválida, senha deve conter pelo menos 6 digitos e uma letra');
       }
-      setValitadion(false)
+      setValidation(false)
     } else {
-
       if (validated) {
         saveLogin()
         navigate('/professor');
@@ -42,8 +51,12 @@ export function NewTeacherAccount() {
 
   const saveLogin = () => {
     localStorage.setItem('teachersAccount', JSON.stringify({
+      'name': newName,
       'email': newEmail,
-      'password': newPassword
+      'password': newPassword,
+      'Data de nascimento': newDate,
+      'CPF': newCPF,
+      'RG': newRG
     }))
   }
 
@@ -54,14 +67,14 @@ export function NewTeacherAccount() {
       <h3>OLÁ, PROFESSOR(A)!</h3>
 
       <InputContainer>
-        {/*<p>NOME</p>
-                <input
-                    type="text"
-                    name="nome"
-                    placeholder="insira seu nome"
-                    value={newName}
-                    onChange={e => setNewName(e.target.value)}
-                />*/}
+        <p>NOME</p>
+          <input
+            type="text"
+            name="nome"
+            placeholder="insira seu nome"
+            value={newName}
+            onChange={e => setNewName(e.target.value)}
+          />
         <p>E-MAIL</p>
         <input
           type="email"
@@ -70,29 +83,29 @@ export function NewTeacherAccount() {
           value={newEmail}
           onChange={e => setNewEmail(e.target.value)}
         />
-        {/*<p>RG</p>
-                <input
-                    type="number"
-                    name="RG"
-                    placeholder="insira seu RG"
-                    value={newRG}
-                    onChange={e => setNewRG(e.target.value)}
-                />
-                <p>CPF</p>
-                <input
-                    type="number"
-                    name="CPF"
-                    placeholder="insira seu CPF"
-                    value={newCPF}
-                    onChange={e => setNewCPF(e.target.value)}
-                />
-                <p>DATA DE NASCIMENTO</p>
-                <input
-                    type="date"
-                    name="data de nascimento"
-                    value={newDate}
-                    onChange={e => setNewDate(e.target.value)}
-                />*/}
+        <p>RG</p>
+          <input
+            type="text"
+            name="RG"
+            placeholder="insira seu RG"
+            value={newRG}
+            onChange={e => setNewRG(e.target.value)}
+          />
+        <p>CPF</p>
+          <input
+            type="text"
+            name="CPF"
+            placeholder="insira seu CPF"
+            value={newCPF}
+            onChange={e => setNewCPF(e.target.value)}
+          />
+        <p>DATA DE NASCIMENTO</p>
+          <input
+            type="date"
+            name="data de nascimento"
+            value={newDate}
+            onChange={e => setNewDate(e.target.value)}
+          />
         <p>SENHA</p>
         <input
           type="password"
@@ -111,9 +124,7 @@ export function NewTeacherAccount() {
         />
       </InputContainer>
       <StyledButton type="submit" onClick={() => validate()} >
-        <Link to="/professor">
-          CADASTRAR
-        </Link>
+        CADASTRAR
       </StyledButton>
     </NewAccountContainer>
   )
