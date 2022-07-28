@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NewAccountContainer, InputContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { validEmail, validPassword } from '../../utils/regex.js'
 import logomarca from '../../assets/images/Edutrip.png'
 
@@ -14,6 +14,7 @@ export function NewTeacherAccount() {
   const [newpassword, setNewPassword] = useState('');
   const [repeatpassword, setRepetNewPassword] = useState('');
   const [validated, setValitadion] = useState(false)
+  const navigate = useNavigate()
 
   const [emailErr, setEmailErr] = useState(true);
   const [pwdError, setPwdError] = useState(true);
@@ -30,6 +31,10 @@ export function NewTeacherAccount() {
     } else {
       alert('Senha inválida');
       return setPwdError(true)
+    }
+
+    if (!pwdError && !emailErr) {
+      navigate('/professor')
     }
   };
 
@@ -97,15 +102,7 @@ export function NewTeacherAccount() {
         />
       </InputContainer>
       <StyledButton type="submit" onClick={() => validate()} >
-        { 
-          (!emailErr && !pwdError) && (
-            <Link to={"/professor"}>
-                CADASTRAR
-            </Link>
-          )
-        }
-        
-
+        CADASTRAR
       </StyledButton>
     </NewAccountContainer>
   )
