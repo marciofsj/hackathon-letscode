@@ -3,14 +3,20 @@ import { InputContainer, FooterContainer, LoginContainer, RadioContainer } from 
 import { StyledButton } from "../../styles/styledbutton";
 import { useState } from "react";
 import logomarca from '../../assets/images/Edutrip.png'
-
+localStorage.setItem('teachersAccount', JSON.stringify([]))
 export function Login () {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
+        
         console.log(email)
         console.log(password)
+    }
+
+    const validateLogin = (email, senha) =>{
+        const teachers = JSON.parse(localStorage.getItem('teachersAccount'))
+        const logionAtempt = {'email': newEmail,'password': newPassword}
     }
 
     return (
