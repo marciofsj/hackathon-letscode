@@ -43,21 +43,32 @@ export function NewTeacherAccount() {
       setValidation(false)
     } else {
       if (validated) {
-        saveLogin()
-        navigate('/professor');
+        const log = validateDuplicate()
+        console.log(log)
+        if(log){
+          navigate('/professor');
+        }
       }
     }
   }
+  // const saveLogin = (logionAtempt,teachers) => { 
+  //     teachers.push(logionAtempt)
+  //   }
+  
+  const validateDuplicate = () =>{
+    const teachers = JSON.parse(localStorage.getItem('teachersAccount'))
+    const logionAtempt = {'email': newEmail,'password': newPassword}
 
-  const saveLogin = () => {
-    localStorage.setItem('teachersAccount', JSON.stringify({
-      'name': newName,
-      'email': newEmail,
-      'password': newPassword,
-      'Data de nascimento': newDate,
-      'CPF': newCPF,
-      'RG': newRG
-    }))
+    if((teachers.filter(t => t.email == logionAtempt.email).length)==0){
+          teachers.push(logionAtempt)
+          localStorage.setItem('teachersAccount', JSON.stringify(teachers))
+      return true
+    }
+    else{
+      alert("email existente")
+      return false
+    }
+
   }
 
   return (
@@ -124,7 +135,7 @@ export function NewTeacherAccount() {
         />
       </InputContainer>
       <StyledButton type="submit" onClick={() => validate()} >
-        CADASTRAR
+          CADASTRAR
       </StyledButton>
     </NewAccountContainer>
   )
