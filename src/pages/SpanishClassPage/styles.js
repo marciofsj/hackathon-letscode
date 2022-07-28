@@ -29,6 +29,11 @@ export const MenuContainer = styled.aside`
     p {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+        opacity: 0.7;
+        }
     }
 
     img {

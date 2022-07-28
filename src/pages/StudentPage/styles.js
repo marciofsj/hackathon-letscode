@@ -25,7 +25,8 @@ export const BodyContainer = styled.div`
     border-radius: 8px;
     margin: 1rem auto;
     padding: 1rem;
-    max-width: 80%; 
+    max-width: 80%;
+    box-shadow: 1px 1px 10px black;
 
     div {
         display: flex;
@@ -36,6 +37,10 @@ export const BodyContainer = styled.div`
             width: 8rem;
             height: 8rem;
             margin: 2rem 0 -2rem 0;
+
+            input {
+                box-shadow: 1px 1px 10px black;
+            }
         }
         
         @media (max-width: 508px) {
@@ -75,6 +80,11 @@ export const MenuContainer = styled.aside`
     p {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+        opacity: 0.7;
+        }
     }
 
     img {

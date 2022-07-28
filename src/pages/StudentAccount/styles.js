@@ -12,6 +12,7 @@ export const NewAccountContainer = styled.div`
     margin: 1rem auto;
     padding: 1rem;
     max-width: 50rem;
+    box-shadow: 1px 1px 10px black;
 
     img {
         margin-top: 1rem;
