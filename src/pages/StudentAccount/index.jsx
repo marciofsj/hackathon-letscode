@@ -2,7 +2,8 @@ import { useState } from "react";
 import { NewAccountContainer, InputContainer, ClassContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
 import logomarca from '../../assets/images/Edutrip.png'
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { validEmail, validPassword } from "../../utils/regex";
 
 export function NewStudentAccount () {
     const [newName, setNewName] = useState ('');
@@ -10,18 +11,37 @@ export function NewStudentAccount () {
     const [newDate, setNewDate] = useState('');
     const [newPassword, setNewPassword] = useState ('');
     const [repeatPassword, setRepeatNewPassword] = useState ('');
+    const [validated, setValidation] = useState(true)
+    const navigate = useNavigate()
 
     const [emailErr, setEmailErr] = useState(false);
     const [pwdError, setPwdError] = useState(false);
 
     const validate = () => {
-        if (!validEmail.test(newEmail)) {
-           setEmailErr(true);
+        if (!validEmail.test(newEmail) || ((!validPassword.test(newPassword)) || newPassword !== repeatPassword)) {
+          
+          if (!validEmail.test(newEmail)) {
+            return alert('Email inválido');
+          }
+          if ((!validPassword.test(newPassword)) 
+            || newPassword !== repeatPassword) {
+            return alert('Senha inválida, senha deve conter pelo menos 6 digitos e uma letra');
+          }
+          setValidation(false)
+        } else {
+          if (validated) {
+            saveLogin()
+            navigate('/aluno');
+          }
         }
-        if (!validPassword.test(newPassword)) {
-           setPwdError(true);
-        }
-    };
+      }
+    
+      const saveLogin = () => {
+        localStorage.setItem('studentsAccount', JSON.stringify({
+          'email': newEmail,
+          'password': newPassword
+        }))
+      }
 
     return (
         <NewAccountContainer>
@@ -44,16 +64,16 @@ export function NewStudentAccount () {
                     name="e-mail"
                     placeholder="insira seu e-mail"
                     value={newEmail}
-                    onChange={e => setNewDate(e.target.value)}
+                    onChange={e => setNewEmail(e.target.value)}
                 />
                 {/*<p>DATA DE NASCIMENTO</p>
                 <input 
                     type="date" 
                     name="data de nascimento"
                     value={newDate}
-                    onChange={e => setNewEmail(e.target.value)}
+                    onChange={e => setNewDate(e.target.value)}
                 />*/}
-                <ClassContainer>
+                {/*<ClassContainer>
                     TURMA
                     <select name="turma" id="turma">
                         <optgroup label="selecione">
@@ -64,7 +84,7 @@ export function NewStudentAccount () {
                             <option value="9">9ª</option>
                         </optgroup>
                     </select>
-                </ClassContainer> 
+                </ClassContainer>*/}
                 <p>SENHA</p>
                 <input 
                     type="password" 
@@ -82,11 +102,8 @@ export function NewStudentAccount () {
                     onChange={e => setRepeatNewPassword(e.target.value)}
                 />                             
             </InputContainer>
-            <StyledButton type="submit">
-                <Link to="/aluno">
-                    CADASTRAR
-                </Link>
-
+            <StyledButton type="submit" onClick={() => validate()}>
+                CADASTRAR
             </StyledButton>
         </NewAccountContainer>
     )
