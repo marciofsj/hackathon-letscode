@@ -1,20 +1,13 @@
-import { ClassMainContainer, MenuContainer } from './styles';
-import Logo from '../../assets/images/logo.png'
+import { ClassMainContainer } from './styles';
 import { EnglishClassCard } from '../../components/EnglishClassCard'
+import { SideMenuContainer } from '../../components/MenuContainer';
 
 
 export function EnglishClassMainPage () {
     return (
         <ClassMainContainer>
-            <MenuContainer>
-                <img src={Logo}/>
-                <h2>Atividades em aberto</h2>
-                <p>The Shepherd's Boy and the Wolf</p>
-                <p>The Middle - Zedd feat. Maren Morris and Grey </p>
-                <p>Exercise I - Grammar</p>
-            </MenuContainer>
+            <SideMenuContainer />
             <EnglishClassCard />
-              
         </ClassMainContainer>
     )
 }

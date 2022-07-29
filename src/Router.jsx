@@ -9,7 +9,6 @@ import { EnglishClassMainPage } from "./pages/EnglishClassPage";
 import { SpanishClassMainPage } from "./pages/SpanishClassPage";
 import { TeacherCorrectionMainPage } from "./pages/TeacherCorrectionPage";
 
-
 export function Router () {
     return(
         <Routes>

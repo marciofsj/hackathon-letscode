@@ -1,18 +1,12 @@
-import { StudentMainContainer, BodyContainer, MenuContainer } from './styles';
-import Logo from '../../assets/images/logo.png';
+import { StudentMainContainer, BodyContainer } from './styles';
+import { SideMenuContainer } from '../../components/MenuContainer';
 import Uk from '../../assets/images/UK.svg';
-import Spain from '../../assets/images/Spain.svg'
+import Spain from '../../assets/images/Spain.svg';
 
 export function StudentMainPage () {
     return (
         <StudentMainContainer>
-            <MenuContainer>
-                <img src={Logo}/>
-                <h2>Atividades em aberto</h2>
-                <p>The Shepherd's Boy and the Wolf</p>
-                <p>The Middle - Zedd feat. Maren Morris and Grey </p>
-                <p>Exercise I - Grammar</p>
-            </MenuContainer>
+            <SideMenuContainer />
             <BodyContainer>
                 <h1>OLÁ, ALUNO!</h1>
                 <div>   

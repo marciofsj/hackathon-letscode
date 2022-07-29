@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export function SpanishClassCard () {
     return (
         <ClassCardMain>
-            <h3>título de la actividad</h3>
+            <h3>LOS SUSTANTIVOS</h3>
             <HeadContainer>
                 <span>ESPANHOL</span>
                 <span>9ª série</span>
@@ -13,8 +13,15 @@ export function SpanishClassCard () {
             </HeadContainer>
             <SubjectContainer>
                 <p>
-                    Cuándo? Donde? <br />
-                    Pero que si
+                    Os substantivos em Espanhol do gênero masculino são aqueles que no geral (lembrando que existem exceções) terminam em -o e -or. Veja exemplos:<br/>
+                    El gato.<br/>
+                    (O gato)<br/>
+                    El señor.<br/>
+                    (O senhor)<br/>
+                    El amigo.<br/>
+                    (O amigo)<br/>
+                    El cielo.<br/>
+                    (O céu)<br/>
                 </p>    
             </SubjectContainer>
             <div>Sua resposta:</div>
