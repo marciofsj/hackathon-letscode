@@ -34,17 +34,12 @@ export function NewTeacherAccount() {
     } else {
 
       if (validated) {
-        const log = validateDuplicate()
-        console.log(log)
-        if(log){
+        if(validateDuplicate()){
           navigate('/professor');
         }
       }
     }
   }
-  // const saveLogin = (logionAtempt,teachers) => { 
-  //     teachers.push(logionAtempt)
-  //   }
   
   const validateDuplicate = () =>{
     const teachers = JSON.parse(localStorage.getItem('teachersAccount'))
@@ -56,7 +51,7 @@ export function NewTeacherAccount() {
       return true
     }
     else{
-      alert("email existente")
+      alert("email já cadastrado")
       return false
     }
 

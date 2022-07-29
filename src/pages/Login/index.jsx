@@ -1,23 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { InputContainer, FooterContainer, LoginContainer, RadioContainer } from "./styles";
 import { StyledButton } from "../../styles/styledbutton";
 import { useState } from "react";
 import logomarca from '../../assets/images/Edutrip.png'
-localStorage.setItem('teachersAccount', JSON.stringify([]))
 export function Login () {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [profile, setProfile] = useState("professor")
+    
     const handleLogin = () => {
-        
-        console.log(email)
-        console.log(password)
+        const validated = validateLogin(email,password,profile)
+        // console.log(validated)
+        if(validated){
+            if(profile == "aluno"){
+                Navigate("/StudentPage")
+            }
+            if(profile == "profrssor"){
+                Navigate("/TeacherPage")
+            }
+        }
+
     }
 
-    const validateLogin = (email, senha) =>{
-        const teachers = JSON.parse(localStorage.getItem('teachersAccount'))
-        const logionAtempt = {'email': newEmail,'password': newPassword}
-    }
+    const validateLogin = (email, password, profile) =>{
+        if(profile == "professor"){
+
+            const teachers = JSON.parse(localStorage.getItem('teachersAccount'))
+            const loginAtempt = {'email': email,'password': password}
+            const user = teachers.filter(t => t.email == loginAtempt.email)
+            console.log(teachers)
+            console.log(loginAtempt)
+            console.log(user)
+
+            if(user.length==1 && user[0].password == loginAtempt.password){
+                return true
+            }
+            else{
+                alert("usuário não encontrado ou senha incorreta")
+                return false
+            }
+        }
+        }
+    
 
     return (
         <LoginContainer>
@@ -27,11 +51,11 @@ export function Login () {
                     <RadioContainer>
                         <legend>Você é um:</legend>
                         <div>
-                            <input type="radio" name="logar como" id="aluno"/>
+                            <input type="radio" name="logar como" id="aluno" value="aluno" checked={profile == "aluno"} onChange={(e) => setProfile(e.target.value)}/>
                             <label for="aluno">Aluno</label>
                         </div>
                         <div>
-                            <input type="radio" name="logar como" id="professor"/>
+                            <input type="radio" name="logar como" id="professor" value="professor" checked={profile == "professor"} onChange={(e) => setProfile(e.target.value)}/>
                             <label for="professor">Professor</label>
                         </div>
                     </RadioContainer>
