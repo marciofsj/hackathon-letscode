@@ -9,6 +9,11 @@ import { EnglishClassMainPage } from "./pages/EnglishClassPage";
 import { SpanishClassMainPage } from "./pages/SpanishClassPage";
 import { TeacherCorrectionMainPage } from "./pages/TeacherCorrectionPage";
 
+localStorage.setItem('teachersAccount', JSON.stringify([]))
+localStorage.setItem('studentsAccount', JSON.stringify([]))
+localStorage.setItem('teacherContent', JSON.stringify([]))
+localStorage.setItem('teacherExercise', JSON.stringify([]))
+
 export function Router () {
     return(
         <Routes>

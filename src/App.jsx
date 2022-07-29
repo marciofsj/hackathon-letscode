@@ -1,10 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { Router } from './Router'
-localStorage.setItem('teachersAccount', JSON.stringify([]))
-localStorage.setItem('studentsAccount', JSON.stringify([]))
-localStorage.setItem('teacherContent', JSON.stringify([]))
-localStorage.setItem('teacherExercise', JSON.stringify([]))
+
 
 
 

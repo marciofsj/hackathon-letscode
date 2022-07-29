@@ -1,5 +1,5 @@
 import { DivButton, ClassCardMain, HeadContainer, SubjectContainer} from './styles';
-import TextEditorContainer from '../TextEditor';
+import {TextEditorContainer} from '../TextEditor';
 import { Link } from 'react-router-dom';
 
 export function CorrectionCard () {

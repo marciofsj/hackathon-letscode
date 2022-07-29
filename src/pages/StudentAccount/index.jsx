@@ -44,7 +44,7 @@ export function NewStudentAccount () {
           const log = validateDuplicate()
           console.log(log)
         if(log){
-          navigate('/aluno');
+          navigate('/');
           }
         }
       }
