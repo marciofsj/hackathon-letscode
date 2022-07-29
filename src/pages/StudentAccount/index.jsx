@@ -3,7 +3,7 @@ import { NewAccountContainer, InputContainer, ClassContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
 import logomarca from '../../assets/images/Edutrip.png'
 import { useNavigate } from "react-router-dom";
-import { validEmail, validPassword } from "../../utils/regex";
+import { validEmail, validName, validPassword,  } from "../../utils/regex";
 
 export function NewStudentAccount () {
     const [newName, setNewName] = useState ('');
@@ -12,36 +12,62 @@ export function NewStudentAccount () {
     const [newPassword, setNewPassword] = useState ('');
     const [repeatPassword, setRepeatNewPassword] = useState ('');
     const [validated, setValidation] = useState(true)
+    const [newTurma, setTurma] = useState(null)
     const navigate = useNavigate()
 
-    const [emailErr, setEmailErr] = useState(false);
-    const [pwdError, setPwdError] = useState(false);
-
     const validate = () => {
-        if (!validEmail.test(newEmail) || ((!validPassword.test(newPassword)) || newPassword !== repeatPassword)) {
-          
-          if (!validEmail.test(newEmail)) {
-            return alert('Email inválido');
-          }
-          if ((!validPassword.test(newPassword)) 
-            || newPassword !== repeatPassword) {
-            return alert('Senha inválida, senha deve conter pelo menos 6 digitos e uma letra');
-          }
-          setValidation(false)
-        } else {
-          if (validated) {
-            saveLogin()
-            navigate('/aluno');
+      if (!validEmail.test(newEmail) || ((!validPassword.test(newPassword)) || newPassword !== repeatPassword)
+        || (!validName.test(newName)) || (!newDate) || (newTurma === 'null'))  {
+
+        if (!validName.test(newName)) {
+          return alert('insira um Nome válido sem caracteres especiais')
+        }
+        if (!validEmail.test(newEmail)) {
+          return alert('Email inválido');
+        }
+        if (!newDate) {
+          console.log(newDate)
+          return alert('Insira uma data de Nacismento válida')
+        }
+        if (newTurma === 'null') {
+          return alert('Selecione sua turma')
+        }
+        if ((!validPassword.test(newPassword)) 
+        || newPassword !== repeatPassword) {
+          return alert('Senha inválida, senha deve conter pelo menos 6 digitos e uma letra');
+      }
+
+      setValidation(false)
+
+      } else {
+        if (validated) {
+          const log = validateDuplicate()
+          console.log(log)
+        if(log){
+          navigate('/aluno');
           }
         }
       }
+    }
+
+    const validateDuplicate = () =>{
+      const students = JSON.parse(localStorage.getItem('studentsAccount'))
+      const logionAtempt = {
+        'email': newEmail,
+        'password': newPassword,}
     
-      const saveLogin = () => {
-        localStorage.setItem('studentsAccount', JSON.stringify({
-          'email': newEmail,
-          'password': newPassword
-        }))
+      if((students.filter(t => t.email == logionAtempt.email).length)==0){
+            students.push(logionAtempt)
+            localStorage.setItem('studentsAccount', JSON.stringify(students))
+        return true
       }
+      else{
+        alert("Email já existente")
+        return false
+      }
+    
+    }
+    
 
     return (
         <NewAccountContainer>
@@ -50,14 +76,14 @@ export function NewStudentAccount () {
             <h3>OLÁ, ALUNO!</h3>
 
             <InputContainer>
-                {/*<p>NOME</p>
+                <p>NOME</p>
                 <input 
                     type="text" 
                     name="nome" 
                     placeholder="insira seu nome"
                     alue={newName}
                     onChange={e => setNewName(e.target.value)}
-                />*/}
+                />
                 <p>E-MAIL</p>
                 <input 
                     type="email" 
@@ -66,25 +92,25 @@ export function NewStudentAccount () {
                     value={newEmail}
                     onChange={e => setNewEmail(e.target.value)}
                 />
-                {/*<p>DATA DE NASCIMENTO</p>
+                <p>DATA DE NASCIMENTO</p>
                 <input 
                     type="date" 
                     name="data de nascimento"
                     value={newDate}
                     onChange={e => setNewDate(e.target.value)}
-                />*/}
-                {/*<ClassContainer>
+                />
+                <ClassContainer>
                     TURMA
-                    <select name="turma" id="turma">
-                        <optgroup label="selecione">
-                            <option value="null">-------</option>
-                            <option value="6">6ª</option>
-                            <option value="7">7ª</option>
-                            <option value="8">8ª</option>
-                            <option value="9">9ª</option>
-                        </optgroup>
-                    </select>
-                </ClassContainer>*/}
+                  <select onChange={e => setTurma(e.target.value)} name="turma" id="turma">
+                    <optgroup id="turmaOption" label="selecione">
+                      <option type='text' value="null" >-------</option>
+                      <option type='text' value="6">6ª</option>
+                      <option type='text' value="7">7ª</option>
+                      <option type='text' value="8">8ª</option>
+                      <option type='text' value="9">9ª</option>
+                    </optgroup>
+                  </select>
+                </ClassContainer>
                 <p>SENHA</p>
                 <input 
                     type="password" 
