@@ -35,12 +35,10 @@ export function NewTeacherAccount() {
         return alert('Insira um CPF válido')
       }
       if (!newDate) {
-        console.log(newDate)
         return alert('Insira uma data de Nacismento válida')
       }
       if ((!validPassword.test(newPassword)) 
         || newPassword !== repeatPassword) {
-        console.log(newDate)
         return alert('Senha inválida, senha deve conter pelo menos 6 digitos e uma letra');
       }
       setValidation(false)
