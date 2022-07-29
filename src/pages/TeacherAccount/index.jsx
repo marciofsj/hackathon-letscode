@@ -69,11 +69,7 @@ export function NewTeacherAccount() {
       return true
     }
     else{
-<<<<<<< HEAD
       alert("email já cadastrado")
-=======
-      alert("Email já existente")
->>>>>>> 83070f547737eb63db1d9d80153fbf89a192873c
       return false
     }
 
