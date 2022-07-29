@@ -16,13 +16,10 @@ export function NewTeacherAccount() {
   const [validated, setValidation] = useState(true)
   const navigate = useNavigate()
 
-  const [emailErr, setEmailErr] = useState(true);
-  const [pwdError, setPwdError] = useState(true);
-
   const validate = () => {
 
     if (!validEmail.test(newEmail) || ((!validPassword.test(newPassword)) || newPassword !== repeatPassword)
-      || (!validCPF.test(newCPF)) || (!validRG.test(newRG)) || (!validName.test(newName))) {
+      || (!validCPF.test(newCPF)) || (!validRG.test(newRG)) || (!validName.test(newName)) || (!newDate)) {
 
       if (!validName.test(newName)) {
         return alert('insira um Nome válido sem caracteres especiais')
@@ -37,8 +34,13 @@ export function NewTeacherAccount() {
       if (!validCPF.test(newCPF)) {
         return alert('Insira um CPF válido')
       }
+      if (!newDate) {
+        console.log(newDate)
+        return alert('Insira uma data de Nacismento válida')
+      }
       if ((!validPassword.test(newPassword)) 
         || newPassword !== repeatPassword) {
+        console.log(newDate)
         return alert('Senha inválida, senha deve conter pelo menos 6 digitos e uma letra');
       }
       setValidation(false)
@@ -53,7 +55,13 @@ export function NewTeacherAccount() {
   
   const validateDuplicate = () =>{
     const teachers = JSON.parse(localStorage.getItem('teachersAccount'))
-    const logionAtempt = {'email': newEmail,'password': newPassword}
+    const logionAtempt = {
+      'name': newName,
+      'email': newEmail,
+      'password': newPassword,
+      'RG': newRG,
+      'CPF': newCPF
+    }
 
     if((teachers.filter(t => t.email == logionAtempt.email).length)==0){
           teachers.push(logionAtempt)
