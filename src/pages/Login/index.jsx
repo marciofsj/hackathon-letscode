@@ -1,22 +1,24 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { InputContainer, FooterContainer, LoginContainer, RadioContainer } from "./styles";
 import { StyledButton } from "../../styles/styledbutton";
 import { useState } from "react";
 import logomarca from '../../assets/images/Edutrip.png'
 export function Login () {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [profile, setProfile] = useState("professor")
     
     const handleLogin = () => {
         const validated = validateLogin(email,password,profile)
-        // console.log(validated)
+        console.log(validated)
         if(validated){
+            console.log(profile)
             if(profile == "aluno"){
-                Navigate("/StudentPage")
+                navigate("/aluno")
             }
-            if(profile == "profrssor"){
-                Navigate("/TeacherPage")
+            if(profile == "professor"){
+                navigate("/professor")
             }
         }
 
@@ -40,7 +42,24 @@ export function Login () {
                 return false
             }
         }
+        if(profile == "aluno"){
+
+            const student = JSON.parse(localStorage.getItem('studentsAccount'))
+            const loginAtempt = {'email': email,'password': password}
+            const user = student.filter(t => t.email == loginAtempt.email)
+            console.log(student)
+            console.log(loginAtempt)
+            console.log(user)
+
+            if(user.length==1 && user[0].password == loginAtempt.password){
+                return true
+            }
+            else{
+                alert("usuário não encontrado ou senha incorreta")
+                return false
+            }
         }
+    }
     
 
     return (
