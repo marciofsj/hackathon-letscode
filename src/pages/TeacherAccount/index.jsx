@@ -45,7 +45,7 @@ export function NewTeacherAccount() {
     } else {
       if (validated) {
         if(validateDuplicate()){
-          navigate('/professor');
+          navigate('/');
         }
       }
     }
@@ -57,6 +57,7 @@ export function NewTeacherAccount() {
       'name': newName,
       'email': newEmail,
       'password': newPassword,
+      'data-nascimento': newDate,
       'RG': newRG,
       'CPF': newCPF
     }

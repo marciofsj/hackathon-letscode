@@ -44,7 +44,7 @@ export function NewStudentAccount () {
           const log = validateDuplicate()
           console.log(log)
         if(log){
-          navigate('/aluno');
+          navigate('/');
           }
         }
       }
@@ -53,6 +53,7 @@ export function NewStudentAccount () {
     const validateDuplicate = () =>{
       const students = JSON.parse(localStorage.getItem('studentsAccount'))
       const logionAtempt = {
+        'name': newName,
         'email': newEmail,
         'password': newPassword,}
     

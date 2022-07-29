@@ -3,11 +3,13 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { TextArea } from './styles';
 
+
 class TextEditorContainer extends Component {
     
     render() {
 
         return (
+            <>
             <TextArea>    
                 <CKEditor
                     editor={ ClassicEditor }
@@ -27,6 +29,9 @@ class TextEditorContainer extends Component {
                     } }
                 />
             </TextArea>
+
+            <button> Teste </button>
+            </>
         );
     }
 }
