@@ -3,26 +3,21 @@ import {TextEditorContainer} from '../TextEditor';
 import { Link } from 'react-router-dom';
 
 export function SpanishClassCard () {
+
+    const exercises = (JSON.parse(localStorage.getItem('teacherExercise')))
+    const exercise = (exercises.filter(e => e.materia === "espanhol"))[0]
+
+
     return (
         <ClassCardMain>
-            <h3>LOS SUSTANTIVOS</h3>
+            <h3>{exercise.titulo}</h3>
             <HeadContainer>
-                <span>ESPANHOL</span>
-                <span>9ª série</span>
-                <span>Contenido</span>
+                <span>{exercise.materia.toUpperCase()}</span>
+                <span>{`${exercise.turma}ª série`}</span>
+                <span>{exercise.categoria}</span>
             </HeadContainer>
             <SubjectContainer>
-                <p>
-                    Os substantivos em Espanhol do gênero masculino são aqueles que no geral (lembrando que existem exceções) terminam em -o e -or. Veja exemplos:<br/>
-                    El gato.<br/>
-                    (O gato)<br/>
-                    El señor.<br/>
-                    (O senhor)<br/>
-                    El amigo.<br/>
-                    (O amigo)<br/>
-                    El cielo.<br/>
-                    (O céu)<br/>
-                </p>    
+            <div dangerouslySetInnerHTML={{__html: exercise.conteudo}}/>
             </SubjectContainer>
             <div>Sua resposta:</div>
             <TextEditorContainer/>
