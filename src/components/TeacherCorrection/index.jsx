@@ -21,13 +21,13 @@ export function CorrectionCard () {
             <div>Comentários e correções:</div>
             <TextEditorContainer/>
             <DivButton>
-                <button >
-                    VOLTAR
-                    {/* <Link to="/professor">VOLTAR</Link> */}
-                </button>
                 <button>
                     ENVIAR
                     {/* <Link to="/">ENVIAR</Link> */}
+                </button>
+                <button >
+                    VOLTAR
+                    {/* <Link to="/professor">VOLTAR</Link> */}
                 </button>
             </DivButton>
         </ClassCardMain>

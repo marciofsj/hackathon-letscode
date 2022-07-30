@@ -22,13 +22,13 @@ export function SpanishClassCard () {
             <div>Sua resposta:</div>
             <TextEditorContainer/>
             <DivButton>
-                <button >
-                    VOLTAR
-                    {/* <Link to="/professor">VOLTAR</Link> */}
-                </button>
                 <button>
                     ENVIAR
                     {/* <Link to="/">ENVIAR</Link> */}
+                </button>
+                <button >
+                    VOLTAR
+                    {/* <Link to="/professor">VOLTAR</Link> */}
                 </button>
             </DivButton>
         </ClassCardMain>
