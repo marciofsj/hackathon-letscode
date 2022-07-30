@@ -3,22 +3,26 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { TextArea } from './styles';
 
+let data = ''
 
 class TextEditorContainer extends Component {
+
     
     render() {
 
         return (
             <>
             <TextArea>    
-                <CKEditor
+                <CKEditor 
                     editor={ ClassicEditor }
-                    data="<p></p>"
+                    data="<strong></strong>"
+                
                     onReady={ editor => {
                         console.log( 'Editor is ready to use!', editor );
                     } }
                     onChange={ ( event, editor ) => {
-                        const data = editor.getData();
+                        data = editor.getData();
+                        
                         console.log( { event, editor, data } );
                     } }
                     onBlur={ ( event, editor ) => {
@@ -36,4 +40,7 @@ class TextEditorContainer extends Component {
     }
 }
 
-export default TextEditorContainer;
+let cleanData = data.replace('<p>', '')
+data = cleanData
+
+export {TextEditorContainer, data};

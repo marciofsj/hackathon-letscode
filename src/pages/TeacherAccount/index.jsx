@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NewAccountContainer, InputContainer } from "./styles"
 import { StyledButton } from "../../styles/styledbutton"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { validEmail, validPassword, validCPF, validRG, validName } from '../../utils/regex.js'
 import logomarca from '../../assets/images/Edutrip.png'
 
