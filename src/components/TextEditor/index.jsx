@@ -33,14 +33,11 @@ class TextEditorContainer extends Component {
                     } }
                 />
             </TextArea>
-
-            <button> Teste </button>
             </>
         );
     }
 }
 
-let cleanData = data.replace('<p>', '')
-data = cleanData
+
 
 export {TextEditorContainer, data};
