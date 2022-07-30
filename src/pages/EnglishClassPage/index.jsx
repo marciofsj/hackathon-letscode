@@ -1,12 +1,12 @@
 import { ClassMainContainer } from './styles';
-import { EnglishClassCard } from '../../components/EnglishClassCard'
-import { SideMenuContainer } from '../../components/MenuContainer';
+import { EnglishClassCard } from '../../components/EnglishClassCard';
+import { StudentSideMenuContainer } from '../../components/StudentMenuContainer';
 
 
 export function EnglishClassMainPage () {
     return (
         <ClassMainContainer>
-            <SideMenuContainer />
+            <StudentSideMenuContainer />
             <EnglishClassCard />
         </ClassMainContainer>
     )

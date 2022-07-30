@@ -1,12 +1,12 @@
 import { StudentMainContainer, BodyContainer } from './styles';
-import { SideMenuContainer } from '../../components/MenuContainer';
+import { StudentSideMenuContainer } from '../../components/StudentMenuContainer';
 import Uk from '../../assets/images/UK.svg';
 import Spain from '../../assets/images/Spain.svg';
 
 export function StudentMainPage () {
     return (
         <StudentMainContainer>
-            <SideMenuContainer />
+            <StudentSideMenuContainer />
             <BodyContainer>
                 <h1>OLÁ, ALUNO!</h1>
                 <div>   

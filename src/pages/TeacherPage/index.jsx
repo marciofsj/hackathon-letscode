@@ -1,13 +1,13 @@
 import { TeacherMainContainer } from './styles';
 import { TeacherCard } from '../../components/TeacherCard';
-import { SideMenuContainer } from '../../components/MenuContainer';
+import { TeacherSideMenuContainer } from '../../components/TeacherMenuContainer';
 
 
 export function TeacherMainPage () {
     return (
         <TeacherMainContainer>
-            <SideMenuContainer />
-            <TeacherCard />         
+            <TeacherSideMenuContainer/>       
+            <TeacherCard />  
         </TeacherMainContainer>
     )
 }
