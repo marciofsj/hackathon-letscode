@@ -1,4 +1,4 @@
-import { StudentMainContainer, BodyContainer } from './styles';
+import { StudentMainContainer, BodyContainer, StyledButtonB } from './styles';
 import { StudentSideMenuContainer } from '../../components/StudentMenuContainer';
 import Uk from '../../assets/images/UK.svg';
 import Spain from '../../assets/images/Spain.svg';
@@ -16,14 +16,12 @@ export function StudentMainPage () {
             <BodyContainer>
                 <h1>OLÁ, ALUNO!</h1>
                 <div>
-                    ==============
-                    <StyledButton onClick={()=>navigate('/materia-ingles')}>
-                        <input type="image" src={Uk}/>
-                    </StyledButton>
-                    <StyledButton onClick={()=>navigate('/materia-espanhol')}>
-                        <input type="image" src={Spain}/>
-                    </StyledButton>
-                    ==============
+                    <StyledButtonB onClick={()=>navigate('/materia-ingles')}>
+                        <input type="image" src={Uk} alt='Bandeira do Reino Unido'/>
+                    </StyledButtonB>
+                    <StyledButtonB onClick={()=>navigate('/materia-espanhol')}>
+                        <input type="image" src={Spain} alt='Bandeira da Espanha'/>
+                    </StyledButtonB>
                 </div>
                 <h3>Recados e avisos</h3>
                 <p>

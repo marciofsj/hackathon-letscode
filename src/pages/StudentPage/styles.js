@@ -110,4 +110,9 @@ export const DivButton = styled.div`
             color: ${(props) => props.theme['blue-1']};
         }
     }
+
+    `
+
+export const StyledButtonB = styled.form`
+    
 `
