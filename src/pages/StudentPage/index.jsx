@@ -3,19 +3,27 @@ import { StudentSideMenuContainer } from '../../components/StudentMenuContainer'
 import Uk from '../../assets/images/UK.svg';
 import Spain from '../../assets/images/Spain.svg';
 
+import { useNavigate } from 'react-router-dom';
+import { StyledButton } from '../../styles/styledbutton';
+
 export function StudentMainPage () {
+    const navigate = useNavigate()
+
+
     return (
         <StudentMainContainer>
             <StudentSideMenuContainer />
             <BodyContainer>
                 <h1>OLÁ, ALUNO!</h1>
-                <div>   
-                    <form action='/materia-ingles'>
+                <div>
+                    ==============
+                    <StyledButton onClick={()=>navigate('/materia-ingles')}>
                         <input type="image" src={Uk}/>
-                    </form>
-                    <form action='/materia-espanhol'>
+                    </StyledButton>
+                    <StyledButton onClick={()=>navigate('/materia-espanhol')}>
                         <input type="image" src={Spain}/>
-                    </form>
+                    </StyledButton>
+                    ==============
                 </div>
                 <h3>Recados e avisos</h3>
                 <p>

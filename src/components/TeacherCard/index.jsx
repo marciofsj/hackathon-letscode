@@ -1,6 +1,5 @@
 import { TeacherCardMain, SelectComponent, DivButton } from './styles';
 import {TextEditorContainer, data} from '../../components/TextEditor';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 
@@ -10,8 +9,8 @@ export function TeacherCard () {
     const [materia, setMateria] = useState('')
     const [categoria, setCategoria] = useState('')
     const [titulo, setTitulo] = useState('')
-    const [conteudo, setConteudo] = useState('')
-    const [exercicio, setExercicio] = useState('')
+    // const [conteudo, setConteudo] = useState('')
+    // const [exercicio, setExercicio] = useState('')
 
     const handleRequest = () => {
         switch (categoria) {
@@ -26,8 +25,8 @@ export function TeacherCard () {
                     'conteudo':data,
                 }
                 exercises.push(exercise)
-
                 localStorage.setItem('teacherExercise',JSON.stringify(exercises))
+                alert('Exercício postado')
                 break;
             case 'conteúdo':
                 const contents = JSON.parse(localStorage.getItem('teacherContent'))
@@ -39,8 +38,8 @@ export function TeacherCard () {
                     'conteudo':data,
                 }
                 contents.push(content)
-
                 localStorage.setItem('teacherContent',JSON.stringify(contents))
+                alert('Conteúdo postado')
                 break;
             case 'extra-classe':
                 console.log('é um conteudo extra')
