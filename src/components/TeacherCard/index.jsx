@@ -12,6 +12,8 @@ export function TeacherCard () {
     const [titulo, setTitulo] = useState('')
     const [conteudo, setConteudo] = useState('')
     const [exercicio, setExercicio] = useState('')
+    const navigate = useNavigate()
+    const navi = (path) => {navigate(path)}
 
     const handleRequest = () => {
         let cleanData = data
@@ -21,8 +23,6 @@ export function TeacherCard () {
         switch (categoria) {
             case 'exercício':
                 const exercises = JSON.parse(localStorage.getItem('teacherExercise'))
-                console.log(exercises)
-
                 const exercise = {
                     'turma':turma,
                     'materia':materia,
@@ -30,12 +30,22 @@ export function TeacherCard () {
                     'titulo':titulo,
                     'conteudo':data,
                 }
-                // exercisesParsed.push(exercise)
+                exercises.push(exercise)
 
                 //localStorage.setItem('teacherExercise',JSON.stringify(exercises))
                 break;
             case 'conteúdo':
-                console.log(`conteudo = ${conteudo}`)
+                const contents = JSON.parse(localStorage.getItem('teacherContent'))
+                const content = {
+                    'turma':turma,
+                    'materia':materia,
+                    'categoria':categoria,
+                    'titulo':titulo,
+                    'conteudo':data,
+                }
+                contents.push(content)
+
+                localStorage.setItem('teacherContent',JSON.stringify(contents))
                 break;
             case 'extra-classe':
                 console.log('é um conteudo extra')
@@ -91,7 +101,7 @@ export function TeacherCard () {
             <TextEditorContainer >Atividade</TextEditorContainer>
             <DivButton>
                 {/* NÃO ENCAMINHAR A NENHUMA PAGE. APENAS AÇÃO DOS BOTÕES */}
-                <button>CANCELAR</button>
+                <button onClick={() => navi('/')}>CANCELAR</button>
                 <button onClick={() => handleRequest()}>ENVIAR</button>
             </DivButton>
         </TeacherCardMain>

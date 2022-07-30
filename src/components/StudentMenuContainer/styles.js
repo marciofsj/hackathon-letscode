@@ -12,7 +12,7 @@ export const MenuContainer = styled.aside`
 
     p {
         font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        margin: 0.5rem 0 0.5rem 0;
         cursor: pointer;
 
         &:hover {

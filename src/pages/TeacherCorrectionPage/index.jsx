@@ -1,12 +1,12 @@
 import { TeacherCorrectionContainer } from './styles';
 import { CorrectionCard } from '../../components/TeacherCorrection';
-import { SideMenuContainer } from '../../components/MenuContainer';
+import { TeacherSideMenuContainer } from '../../components/TeacherMenuContainer';
 
 
 export function TeacherCorrectionMainPage () {
     return (
         <TeacherCorrectionContainer>
-            <SideMenuContainer /> 
+            <TeacherSideMenuContainer/> 
             <CorrectionCard />
         </TeacherCorrectionContainer>
     )
