@@ -9,10 +9,10 @@ import { EnglishClassMainPage } from "./pages/EnglishClassPage";
 import { SpanishClassMainPage } from "./pages/SpanishClassPage";
 import { TeacherCorrectionMainPage } from "./pages/TeacherCorrectionPage";
 
-localStorage.setItem('teachersAccount', JSON.stringify([]))
-localStorage.setItem('studentsAccount', JSON.stringify([]))
-localStorage.setItem('teacherContent', JSON.stringify([]))
-localStorage.setItem('teacherExercise', JSON.stringify([]))
+localStorage.setItem('teachersAccount', JSON.stringify([{"name":"teste","email":"teste@test.com","password":"123a","RG":"1403684421","CPF":"06826716577"}]))
+localStorage.setItem('studentsAccount', JSON.stringify([{"email":"teste@test2.com","password":"123a"}]))
+localStorage.setItem('teacherContent', JSON.stringify([{"turma":"6","materia":"espanhol","categoria":"exercício","titulo":"342342","conteudo":"<p>43242343242</p>"}]))
+localStorage.setItem('teacherExercise', JSON.stringify([{"turma":"8","materia":"inglês","categoria":"conteúdo","titulo":"kdfkjsdf","conteudo":"<p>a casa caiu, parça!</p>"}]))
 
 export function Router () {
     return(

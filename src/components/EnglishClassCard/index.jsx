@@ -3,6 +3,9 @@ import {TextEditorContainer} from '../TextEditor';
 import { Link } from 'react-router-dom';
 
 export function EnglishClassCard () {
+
+
+
     return (
         <ClassCardMain>
             <h3>The Shepherd's Boy and the Wolf</h3>

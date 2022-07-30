@@ -16,11 +16,8 @@ export function TeacherCard () {
     const handleRequest = () => {
         switch (categoria) {
             case 'exercício':
-                const students = JSON.parse(localStorage.getItem('studentsAccount'))
-                const exercises = JSON.parse(localStorage.getItem('teacherExercise'))
-                console.log(typeof(students))
-                console.log(students)
 
+                const exercises = JSON.parse(localStorage.getItem('teacherExercise'))
                 const exercise = {
                     'turma':turma,
                     'materia':materia,
@@ -28,12 +25,22 @@ export function TeacherCard () {
                     'titulo':titulo,
                     'conteudo':data,
                 }
-                // exercisesParsed.push(exercise)
+                exercises.push(exercise)
 
                 localStorage.setItem('teacherExercise',JSON.stringify(exercises))
                 break;
             case 'conteúdo':
-                console.log(`conteudo = ${conteudo}`)
+                const contents = JSON.parse(localStorage.getItem('teacherContent'))
+                const content = {
+                    'turma':turma,
+                    'materia':materia,
+                    'categoria':categoria,
+                    'titulo':titulo,
+                    'conteudo':data,
+                }
+                contents.push(content)
+
+                localStorage.setItem('teacherContent',JSON.stringify(contents))
                 break;
             case 'extra-classe':
                 console.log('é um conteudo extra')
